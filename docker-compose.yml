@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  palinka-app:
+    build: .
+    tty: true
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    logging:
+     options:
+      max-size: "10M"
+      max-file: "10"
+
